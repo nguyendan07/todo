@@ -1,11 +1,25 @@
-# A Minimalistic Modern Django Boilerplate
+# A To Do application using HTMX/Django
 
-This boilerplate is mainly for educational purposes. It is meant to be cloned as a starter code for future tutorials. But it could also be extended for full use in production or to quickly experiment with new Django ideas.
+The project is a single-page "to do" application.
 
-Fully featured boilerplates by nature are opinionated. This is not the goal here. This boilerplate has the minimal amount of code with minimal opinions. The idea is once you build and understand a basic example, you could swab parts of it with your own preferences, customize more complicated options, or simply build on top of this one. This is meant to replace the default startproject Django code.
+## Get it up and running
+**Install poetry and create virtual environments**
+```
+pip install -U pip poetry
+poetry install && poetry shell
+```
 
-## Usage
-1. git clone https://github.com/nguyendan07/django-boilerplate
-2. docker compose up -d --build
-3. docker compose exec web python manage.py migrate
-4. Hack away
+**Running project**
+```
+./manage.py migrate
+./manage.py loaddata dev_data.json
+./manage.py runserver
+```
+
+## Running project with Docker
+1. docker compose up -d --build
+2. docker compose exec web python manage.py migrate
+3. docker compose exec web python manage.py loaddata dev_data.json
+
+
+*Open in your browser, visit http://127.0.0.1:8000 and login to /admin with admin/123456a@*
