@@ -10,7 +10,9 @@
     <title>HTMX/Django To DO SPA </title>
 
     <!-- Halfmoon CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/halfmoon@1.1.1/css/halfmoon-variables.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/halfmoon@1.1.1/css/halfmoon-variables.min.css" integrity="sha384-B/WX979vnb0NdAdePrDXriPU/VvvKWOq0/w0/I8ZvtPhxq9A7MibwIiUR5bK64VW" crossorigin="anonymous">
+    <!-- Load Htmx from unpkg -->
+    <script src="https://unpkg.com/htmx.org@1.6.1" integrity="sha384-tvG/2mnCFmGQzYC1Oh3qxQ7CkQ9kMzYjWZSNtrRZygHPDDqottzEJsqS4oUVodhW" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -23,7 +25,12 @@
     </div>
 
     <!-- Halfmoon JS -->
-    <script src="https://cdn.jsdelivr.net/npm/halfmoon@1.1.1/js/halfmoon.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/halfmoon@1.1.1/js/halfmoon.min.js" integrity="sha384-kEL+JYrrVMObVEa9cInRrIkxqNKRmAPsXihxHrqMKAKzn5wlLeIMpeEi6idTNr9N" crossorigin="anonymous"></script>
+    <script>
+        document.body.addEventListener('htmx:configRequest', (e) => {
+            e.detail.headers['X-CSRFToken'] = '{{ csrf_token }}';
+        })
+    </script>
 </body>
 
 </html>
