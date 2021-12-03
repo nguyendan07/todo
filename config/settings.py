@@ -92,7 +92,6 @@ DATABASES = {
         'PORT': 5432
     }
 }
-
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
 
@@ -143,6 +142,8 @@ AUTHENTICATION_BACKENDS = [
     'allauth.account.auth_backends.AuthenticationBackend',
 ]
 
+LOGIN_REDIRECT_URL = 'home'
+LOGOUT_REDIRECT_URL = 'home'
 ACCOUNT_SESSION_REMEMBER = True # remember user via sessions
 ACCOUNT_SIGNUP_PASSWORD_ENTER_TWICE = False # preferred UX
 ACCOUNT_USERNAME_REQUIRED = False # preferred UX
