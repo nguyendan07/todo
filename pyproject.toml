@@ -1,7 +1,7 @@
 [tool.poetry]
-name = "boilerplate"
+name = "todo"
 version = "0.1.0"
-description = "A Minimalistic Modern Django Boilerplate"
+description = "A To Do application using HTMX/Django"
 authors = ["Nguyen Van Dan <nguyenvdan07@gmail.com>"]
 
 [tool.poetry.dependencies]
