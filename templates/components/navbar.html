@@ -13,12 +13,22 @@
             <a href="{% url 'home' %}" class="nav-link">Home</a>
         </li>
         {% if user.is_authenticated %}
-        <li class="nav-item">
-            <a href="{% url 'account_logout' %}" class="nav-link"> Log out </a>
+        <li
+            class="nav-item"
+            hx-get="{% url 'account_logout' %}"
+            hx-target="#authentication"
+            hx-triger="click"
+        >
+            <span class="nav-link"> Log out </span>
         </li>
         {% else %}
-        <li class="nav-item">
-            <a href="{% url 'account_signup' %}" class="nav-link"> Sign up </a>
+        <li
+            class="nav-item"
+            hx-get="{% url 'account_signup' %}"
+            hx-target="#authentication"
+            hx-triger="click"
+        >
+            <span class="nav-link"> Sign up </span>
         </li>
 
         <li class="nav-item">
@@ -41,10 +51,31 @@
         <div class="dropdown-menu dropdown-menu-left" aria-labelledby="navbar-dropdown-toggle-btn">
             <a class="dropdown-item" href="{% url 'home' %}"> Home </a>
             {% if user.is_authenticated %}
-            <a class="dropdown-item" href="{% url 'account_logout' %}">Log out </a>
+            <span
+                class="dropdown-item" 
+                hx-get="{% url 'account_logout' %}"
+                hx-target="#authentication"
+                hx-triger="click"
+            >
+                Log out
+            </span>
             {% else %}
-            <a class="dropdown-item" href="{% url 'account_signup' %}">Sign up </a>
-            <a class="dropdown-item" href="{% url 'account_login' %}"> Log in </a>
+            <span 
+                class="dropdown-item"
+                hx-get="{% url 'account_signup' %}"
+                hx-target="#authentication"
+                hx-triger="click"
+            >
+                Sign up
+            </span>
+            <span 
+                class="dropdown-item"
+                hx-get="{% url 'account_login' %}"
+                hx-target="#authentication"
+                hx-triger="click"
+            >
+                Log in
+                </span>
             {% endif %}
         </div>
     </div>
