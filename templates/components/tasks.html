@@ -1,12 +1,4 @@
 <div class="card w-600 mw-full mx-auto">
-    <h3 class="card-title">
-        Your tasks
-    </h3>
-    <ul>
-        {% for task in tasks %}
-        <li> {{ task }}</li>
-        {% empty %}
-        <li>No item on your list yet</li>
-        {% endfor %}
-    </ul>
+    {% include 'components/tasks/list.html' %}
+    {% include 'components/tasks/form.html' %}
 </div>
