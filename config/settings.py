@@ -142,7 +142,7 @@ AUTHENTICATION_BACKENDS = [
     'allauth.account.auth_backends.AuthenticationBackend',
 ]
 
-LOGIN_REDIRECT_URL = 'home'
+LOGIN_REDIRECT_URL = 'auth'
 LOGOUT_REDIRECT_URL = 'home'
 ACCOUNT_SESSION_REMEMBER = True # remember user via sessions
 ACCOUNT_SIGNUP_PASSWORD_ENTER_TWICE = False # preferred UX
